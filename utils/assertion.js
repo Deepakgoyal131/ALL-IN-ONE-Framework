@@ -1,4 +1,4 @@
-const { expect } = require("@playwright/test");
+import { expect } from "@playwright/test";
 
 /**
  * Assert element text
@@ -91,7 +91,7 @@ async function expectCount(page, locator, expectedCount, options = {}) {
   await expect(page.locator(locator)).toHaveCount(expectedCount, { timeout });
 }
 
-module.exports = {
+export {
   expectText,
   expectTextContains,
   expectVisible,

@@ -25,6 +25,8 @@ await selectFromDropdown(
   "(//div[@role='combobox'])[4]",
   "1/1"
 );
+
+// Universal Dropdown
 */
 
 export default async function selectFromDropdown(
@@ -39,8 +41,10 @@ export default async function selectFromDropdown(
     timeout = 5000
   } = options;
 
-  const dropdown = page.locator(dropdownLocator);
-  await dropdown.waitFor({ state: "visible", timeout });
+const dropdown = page.locator(dropdownLocator);
+
+await dropdown.scrollIntoViewIfNeeded();
+await dropdown.waitFor({ state: "visible", timeout });
 
   /* ---------- STEP 1: Check if <select> ---------- */
   const tagName = await dropdown.evaluate(el => el.tagName.toLowerCase());

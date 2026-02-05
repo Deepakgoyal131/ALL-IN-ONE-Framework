@@ -20,6 +20,7 @@
  */
 async function getRowByText(page, tableLocator, searchText) {
   const table = page.locator(tableLocator);
+  await table.scrollIntoViewIfNeeded();
   await table.waitFor({ state: "visible" });
 
   const row = table.locator("tr", {
