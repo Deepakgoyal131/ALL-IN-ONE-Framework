@@ -65,7 +65,7 @@ test.describe.serial('Test Tables', () => {
     // let row = await getRowByText(page, '#demo', 'History');
     // console.log(await row.textContent());
     await expect(page).toHaveTitle("Dynamic Tables page for Automation");
-      }, 2)
+      }, 1)
     } catch (error) {
       flowBroken = true;
       throw error
